@@ -1,0 +1,28 @@
+name: Deploy to GitHub Pages
+
+on:
+    push:
+        branches: [main] # Hoặc master tùy vào nhánh chính của bạn
+
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write # Cấp quyền ghi để có thể push lên nhánh gh-pages
+        steps:
+            - name: Checkout 🛎️
+              uses: actions/checkout@v4
+
+            - name: Install and Build 🔧
+              run: |
+                  npm install
+                  npm run build
+              env:
+                  VITE_GEMINI_API_KEY: ${{ secrets.VITE_GEMINI_API_KEY }} # Lấy key từ GitHub Secrets
+
+            - name: Deploy 🚀
+              uses: JamesIves/github-pages-deploy-action@v4
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }} # Sử dụng token mặc định của GitHub
+                  branch: gh-pages # Chỉ định rõ nhánh đích
+                  folder: dist # Thư mục chứa kết quả sau khi build
