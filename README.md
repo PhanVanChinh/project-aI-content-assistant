@@ -9,7 +9,7 @@
 [![Gemini AI](https://img.shields.io/badge/Gemini_AI-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
-[Xem Demo tại đây](https://phanvanchinh.github.io/AI-content-assistant/)
+[Xem Demo tại đây](https://phanvanchinh.github.io/project-aI-content-assistant/)
 
 </div>
 
